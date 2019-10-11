@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'poppins', -apple-system, sans-serif;
+            font-weight: bold;
+            margin: 0;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #FFDBDC;
+        }
+        #logo {
+            width: 320px;
+            animation: logo-appear ease-in 0.75s;
+            animation-iteration-count: 1;
+        }
+        #logo:hover {
+            transform: scale(1.05, 1.05);
+            transition: 0.3s;
+        }
+        #text {
+            font-size: 60px;
+            animation: text-appear ease-in 1.5s;
+            text-align: center;
+            padding: 0px 30px;
+        }
+        #subtitle {
+            font-size: 30px;
+            animation: text-appear ease-in 2s;
+            margin-bottom: 50px;
+        }
+        #mail-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            text-decoration: none;
+        }
+        #mail {
+            width: 50px;
+            height: 50px;
+            animation: text-appear ease-in 2.3s !important;
+        }
+        #mail-wrapper:hover {
+            transform: scale(1.05, 1.05);
+            transition: 0.3s;
+        }
+        #contact-us {
+            margin-left: 10px;
+        }
+        .invisible {
+            display: none;
+        }
+        @keyframes logo-appear {
+            from {
+                padding-top: 5vh;
+                opacity: 0;
+            }
+            to {
+                padding-top: 0;
+                opacity: 1;
+            }
+        }
+        @keyframes text-appear {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 100;
+            }
+        }
+        @media only screen and (max-width:700px) {
+            #logo {
+                width: 200px
+            }
+            #text {
+                font-size: 40px
+            }
+            #subtitle {
+                font-size: 25px;
+                margin-bottom: 30px;
+            }
+            #mail {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        @media only screen and (max-width:500px) {
+            #logo {
+                width: 200px
+            }
+            #text {
+                font-size: 30px
+            }
+            #subtitle {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+    <img src="logo.png" alt="logo" id="logo" />
+    <h1 id="text">COMING SOON.</h1>
+    <h3 id="subtitle">TUMWAN FOR ALL</h3>
+    <a href="mailto:name@email.com" target="_blank" id="mail-wrapper">
+        <img src="mail.png" alt="mail" id="mail" />
+        <h3 id="contact-us" class="invisible">CONTACT US</h3>
+    </a>
+</body>
+<script>
+    document.querySelector("#mail-wrapper").addEventListener("mouseover", () => {
+        document.querySelector("#contact-us").classList.remove("invisible")
+    })
+    document.querySelector("#mail-wrapper").addEventListener("mouseout", () => {
+        document.querySelector("#contact-us").classList.add("invisible")
+    })
+</script>
+</html>
